@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ProductShare xmlns="http://www.hardis-group.com/schemas/SupplyChainPortalAPI.xsd">
+	<ReceiptReference>R-220-2333434312</ReceiptReference>
+	<Shares>
+		<Share>
+			<Destination>BFC1</Destination>
+			<SharePercentage>10</SharePercentage>
+		</Share>
+		<Share>
+			<Destination>BFC1</Destination>
+			<SharePercentage>90</SharePercentage>
+		</Share>
+	</Shares>
+</ProductShare>

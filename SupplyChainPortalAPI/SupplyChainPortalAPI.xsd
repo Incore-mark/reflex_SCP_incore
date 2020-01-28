@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:scp="http://www.hardis-group.com/schemas/SupplyChainPortalAPI.xsd" targetNamespace="http://www.hardis-group.com/schemas/SupplyChainPortalAPI.xsd" elementFormDefault="qualified" version="1.0">
+	<xs:element name="ProductShare">
+	<xs:complexType>
+		<xs:sequence>
+	    <xs:element name="ReceiptReference" type="scp:ReceiptReference"   nillable="false" minOccurs="1" maxOccurs="1" />	
+	    <xs:element name="Shares"           type="scp:Shares"             nillable="false" minOccurs="1" maxOccurs="1" />	   
+		</xs:sequence>
+	</xs:complexType>
+	</xs:element>
+
+	<xs:complexType name="Shares">
+		<xs:sequence>
+			<xs:element name="Share"      type="scp:Share"     nillable="false" minOccurs="1" maxOccurs="unbounded" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="Share">
+		<xs:sequence>
+			<xs:element name="Destination"      type="scp:Destination"     nillable="false" minOccurs="1" maxOccurs="1" />
+			<xs:element name="SharePercentage"  type="scp:SharePercentage" nillable="false" minOccurs="1" maxOccurs="1" />
+		</xs:sequence>
+	</xs:complexType>
+
+
+    <xs:simpleType name="ReceiptReference">
+       <xs:restriction base="xs:string">
+          <xs:maxLength value="20"/>
+       </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:simpleType name="Destination">
+       <xs:restriction base="xs:string">
+       <xs:enumeration value="BFC1"></xs:enumeration>
+       <xs:enumeration value="BFC2"></xs:enumeration>
+       </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:simpleType name="SharePercentage">
+       <xs:restriction base="xs:int">
+          <xs:minInclusive value="1"/>
+          <xs:maxInclusive value="100"/>
+       </xs:restriction>
+    </xs:simpleType>    
+</xs:schema>
